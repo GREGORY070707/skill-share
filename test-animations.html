@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Test - SkillShare</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        body {
+            scroll-behavior: smooth;
+            background: #f9fafb;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        
+        .test-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        .test-section h2 {
+            color: #1f2937;
+            font-weight: 800;
+            font-size: 1.875rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .test-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .workshop-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 4px solid #667eea;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .workshop-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .workshop-card:hover::before {
+            left: 100%;
+        }
+        
+        .workshop-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.25);
+            border-left-width: 6px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .badge-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .badge-success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .user-avatar:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+        
+        .meta-item:hover {
+            color: #667eea;
+            transform: translateX(3px);
+        }
+        
+        .meta-item i {
+            transition: transform 0.3s ease;
+        }
+        
+        .meta-item:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-section">
+            <h2><i class="fas fa-flask"></i> Animation Test Suite</h2>
+            <p style="color: #6b7280; margin-top: 1rem;">Hover over elements to see animations in action!</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="test-section">
+            <h2><i class="fas fa-chart-line"></i> Stat Cards (Pulse Animation)</h2>
+            <div class="grid">
+                <div class="stat-card">
+                    <div class="stat-value">42</div>
+                    <div class="stat-label"><i class="fas fa-users"></i> Students</div>
+                </div>
+                <div class="stat-card" style="animation-delay: 0.1s;">
+                    <div class="stat-value">15</div>
+                    <div class="stat-label"><i class="fas fa-book"></i> Workshops</div>
+                </div>
+                <div class="stat-card" style="animation-delay: 0.2s;">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label"><i class="fas fa-star"></i> Satisfaction</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workshop Cards -->
+        <div class="test-section">
+            <h2><i class="fas fa-graduation-cap"></i> Workshop Cards (Shimmer + Lift)</h2>
+            <div class="workshop-card">
+                <h3 style="color: #1f2937; font-weight: 700; margin-bottom: 0.5rem;">
+                    Advanced Web Development
+                </h3>
+                <div style="margin-bottom: 1rem;">
+                    <span class="badge badge-primary">Technology</span>
+                    <span class="badge badge-success">Online</span>
+                </div>
+                <p style="color: #6b7280; margin-bottom: 1rem;">
+                    Learn modern web development with React, Node.js, and MongoDB. Build real-world applications.
+                </p>
+                <div style="margin-bottom: 1rem;">
+                    <div class="meta-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>John Doe</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Nov 15, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>2:00 PM</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus-circle"></i> Enroll Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="test-section">
+            <h2><i class="fas fa-tag"></i> Badges (Scale + Shadow)</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <span class="badge badge-primary">Primary Badge</span>
+                <span class="badge badge-success">Success Badge</span>
+                <span class="badge" style="background: #ef4444; color: white;">Danger Badge</span>
+                <span class="badge" style="background: #f59e0b; color: white;">Warning Badge</span>
+                <span class="badge" style="background: #3b82f6; color: white;">Info Badge</span>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="test-section">
+            <h2><i class="fas fa-mouse-pointer"></i> Buttons (Ripple Effect)</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Primary Button
+                </button>
+                <button class="btn" style="background: #10b981; color: white;">
+                    <i class="fas fa-check"></i> Success Button
+                </button>
+                <button class="btn" style="background: #ef4444; color: white;">
+                    <i class="fas fa-trash"></i> Danger Button
+                </button>
+            </div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="test-section">
+            <h2><i class="fas fa-user-circle"></i> User Avatar (360° Rotation)</h2>
+            <div style="display: flex; gap: 2rem; align-items: center;">
+                <div class="user-avatar">A</div>
+                <div class="user-avatar">B</div>
+                <div class="user-avatar">C</div>
+                <p style="color: #6b7280; margin-left: 1rem;">Hover to rotate!</p>
+            </div>
+        </div>
+
+        <!-- Meta Items -->
+        <div class="test-section">
+            <h2><i class="fas fa-info-circle"></i> Meta Items (Slide + Icon Rotate)</h2>
+            <div>
+                <div class="meta-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Teacher Name</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Start Date</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Time</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Location</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-users"></i>
+                    <span>Participants</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section" style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 style="color: white;">✨ All Animations Working!</h2>
+            <p style="opacity: 0.9; margin-top: 1rem;">Your student dashboard now has professional animations and enhanced UI</p>
+            <a href="student-dashboard.php" class="btn" style="background: white; color: #667eea; margin-top: 1rem;">
+                <i class="fas fa-arrow-right"></i> View Student Dashboard
+            </a>
+        </div>
+    </div>
+</body>
+</html>

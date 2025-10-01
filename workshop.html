@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop Dashboard</title>
+    <link rel="stylesheet" href="workshop.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upcoming Workshops</h1>
+
+        <!-- Add Workshop Section (for teacher/NGO/admin) -->
+        <div class="add-workshop">
+            <h2>Create New Workshop</h2>
+            <form>
+                <input type="text" placeholder="Workshop Title" required>
+                <textarea placeholder="Description" required></textarea>
+                <input type="datetime-local" required>
+                <select required>
+          <option value="">Select Mode</option>
+          <option value="Online">Online</option>
+          <option value="Offline">Offline</option>
+        </select>
+                <input type="text" placeholder="Link/Address" required>
+                <button type="submit">Add Workshop</button>
+            </form>
+        </div>
+
+        <!-- Display Workshop Cards -->
+        <div class="workshop-list">
+            <div class="workshop-card">
+                <h3>Python Programming Basics</h3>
+                <p><strong>Date:</strong> 30 Aug 2025, 4:00 PM</p>
+                <p><strong>Instructor:</strong> Mr. Sharma</p>
+                <p><strong>Mode:</strong> Online</p>
+                <p><strong>Link:</strong> <a href="#">Join Here</a></p>
+                <button>Register</button>
+            </div>
+
+            <!-- Add more workshop cards dynamically -->
+        </div>
+    </div>
+</body>
+
+</html>

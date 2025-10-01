@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill-Sharing Network</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f4f8;
+            color: #333;
+        }
+        
+        header {
+            background-color: #00b894;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: #1e1e1e;
+        }
+        
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        
+        .module-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .module-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        
+        .module-card a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Skill-Sharing Network</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="workshop.html">Workshops</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Connecting Educators, NGOs, and Students for Skill Development</h2>
+        <p>Empowering rural and semi-urban youth through collaborative partnerships.</p>
+    </section>
+
+    <section class="modules">
+        <div class="module-card">
+            <a href="student.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student Icon">
+                <h3>Students</h3>
+                <p>Browse and enroll in workshops to learn new skills.</p>
+            </a>
+        </div>
+        <div class="module-card">
+            <a href="teacher.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Teacher Icon">
+                <h3>Teachers</h3>
+                <p>Register and conduct sessions to share your expertise.</p>
+            </a>
+        </div>
+        <div class="module-card">
+            <a href="ngo.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/3063/3063821.png" alt="NGO Icon">
+                <h3>NGOs</h3>
+                <p>Partner with us to bring workshops to your communities.</p>
+            </a>
+        </div>
+        <div class="module-card">
+            <a href="admin.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/2206/2206368.png" alt="Admin">
+                <h3>Admin</h3>
+                <p>Manage the platform, approve workshops, and ensure smooth coordination across all modules.</p>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Skill-Sharing Network | Empowering Through Education</p>
+    </footer>
+
+</body>
+
+</html>

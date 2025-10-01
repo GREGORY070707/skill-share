@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Skill-Sharing Network</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f4f8;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #636e72;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .dashboard {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        
+        .dashboard h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="admin.html">Dashboard</a>
+        <a href="login.html">Logout</a>
+    </nav>
+
+    <section class="dashboard">
+        <h2>Welcome, Admin</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1098/1098040.png" alt="Manage Users">
+                <h3>Manage Users</h3>
+                <p>Approve or remove Teachers, NGOs, and Students.</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3649/3649460.png" alt="Workshops">
+                <h3>Manage Workshops</h3>
+                <p>Create, update, or delete upcoming skill sessions.</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2645/2645897.png" alt="Reports">
+                <h3>Reports & Analytics</h3>
+                <p>View activity logs and performance data.</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Settings">
+                <h3>Settings</h3>
+                <p>Update platform preferences and configurations.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Skill-Sharing Network | Admin Panel</p>
+    </footer>
+
+</body>
+
+</html>
