@@ -23,7 +23,7 @@ A comprehensive web-based platform connecting students, teachers, and NGOs to fa
 
 **Supporting Team:**
 - Aditya Depkar
-- Amurta Bankar
+- Amruta Bankar
 - Gayatri Dange
 
 ---
